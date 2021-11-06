@@ -7,7 +7,8 @@ directive('show', (el, { modifiers, expression }, { effect }) => {
     let evaluate = evaluateLater(el, expression)
 
     let hide = () => mutateDom(() => {
-        el.style.display = 'none'
+        // el.style.display = 'none'
+        el.style.setProperty("display", "none", "important");
 
         el._x_isShown = false
     })
